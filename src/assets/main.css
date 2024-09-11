@@ -1,7 +1,7 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
+  max-width: 1088px;
   margin: 0 auto;
   /* padding: 2rem; */
   font-weight: normal;
@@ -31,11 +31,11 @@
   } */
 }
 
-@media (min-width: 1024px) {
-  body {
+@media (min-width: 1128px) {
+  /* body {
     display: flex;
     place-items: center;
-  }
+  } */
 
   /* #app {
     display: grid;

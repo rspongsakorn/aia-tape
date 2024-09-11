@@ -31,7 +31,7 @@ header {
   display: flex;
   place-items: flex-start;
   align-items: center;
-  width: 1280px;
+  width: 1088px;
   margin: 0 auto;
 }
 
@@ -67,7 +67,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1128px) {
   /* header {
     display: flex;
     place-items: center;

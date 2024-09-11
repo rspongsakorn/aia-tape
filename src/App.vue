@@ -9,7 +9,4 @@ import NavBar from './components/NavBar.vue'
   <RouterView />
 </template>
 
-<style scoped>
-@media (min-width: 1024px) {
-}
-</style>
+<style scoped></style>
