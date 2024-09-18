@@ -22,6 +22,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   background-color: #bc103f;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
