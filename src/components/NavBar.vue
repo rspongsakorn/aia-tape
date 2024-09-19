@@ -1,23 +1,51 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons-vue'
+
+const open = ref(false)
+
+const openFunction = () => {
+  open.value = !open.value
+}
+
+const routes = [
+  {
+    label: 'HOME',
+    to: '/',
+  },
+  {
+    label: 'ABOUT',
+    to: '/about',
+  },
+]
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <RouterLink to="/">
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="50" height="50"
-      /></RouterLink>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <div class="bg-[#bc103f] fixed w-full z-10 shadow">
+    <div class="relative dt:w-[1088px] dt:m-auto py-3.5 dt:flex justify-between items-center">
+      <!-- <RouterLink to="/"> -->
+      <img alt="Vue logo" class="dt:mx-0 mx-3.5" src="@/assets/logo.svg" width="30" height="30" />
+      <!-- </RouterLink> -->
+
+      <div class="absolute dt:hidden right-4 top-0.5 cursor-pointer text-3xl text-white">
+        <MenuOutlined @click="openFunction()" v-if="!open" />
+        <CloseOutlined @click="openFunction()" v-if="open" />
+      </div>
+      <ul
+        class="text-white dt:flex dt:items-center dt:mb-0 dt:px-0 px-3 dt:pb-0 pb-10 dt:static absolute bg-[#bc103f] dt:w-auto w-full top-13 duration-500 ease-in"
+        :class="[open ? 'left-0' : 'left-[-100%]']"
+      >
+        <li class="dt:mx-4 mx-6 dt:my-0 my-5" v-for="route of routes">
+          <RouterLink :to="route.to">{{ route.label }}</RouterLink>
+        </li>
+      </ul>
     </div>
-  </header>
+  </div>
 </template>
 
 <style scoped>
-header {
+/* header {
   width: 100%;
   position: fixed;
   top: 0;
@@ -66,32 +94,5 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
-
-@media (min-width: 1128px) {
-  /* header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  } */
-
-  /* .logo {
-    margin: 0 2rem 0 0;
-  } */
-
-  /* header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  } */
-
-  /* nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  } */
-}
+} */
 </style>

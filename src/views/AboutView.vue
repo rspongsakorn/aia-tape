@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <!-- <div class="about">
     <h1>This is an about page</h1>
     <div class="grid-container">
       <div class="grid-item">1</div>
@@ -13,10 +13,39 @@
       <div class="grid-item9">9</div>
       <div class="grid-item">10</div>
       <div class="grid-item">11</div>
-      <!-- <div class="grid-item">8</div> -->
     </div>
-  </div>
+  </div> -->
+
+  <a-space direction="vertical">
+    <a-space warp>
+      <a-tooltip title="search">
+        <a-button type="primary" shape="circle" :icon="h(SearchOutlined)" />
+      </a-tooltip>
+      <a-button type="primary" shape="circle">A</a-button>
+      <a-button type="primary" :icon="h(SearchOutlined)">Search</a-button>
+      <a-tooltip title="search">
+        <a-button shape="circle" :icon="h(SearchOutlined)" />
+      </a-tooltip>
+      <a-button :icon="h(SearchOutlined)">Search</a-button>
+    </a-space>
+    <a-space warp>
+      <a-tooltip title="search">
+        <a-button shape="circle" :icon="h(SearchOutlined)" />
+      </a-tooltip>
+      <a-button :icon="h(SearchOutlined)">Search</a-button>
+      <a-tooltip title="search">
+        <a-button type="dashed" shape="circle" :icon="h(SearchOutlined)" />
+      </a-tooltip>
+      <a-button type="dashed" :icon="h(SearchOutlined)">Search</a-button>
+      <a-button :icon="h(SearchOutlined)" href="https://www.google.com" />
+    </a-space>
+  </a-space>
 </template>
+
+<script lang="ts" setup>
+import { h } from 'vue'
+import { SearchOutlined } from '@ant-design/icons-vue'
+</script>
 
 <style>
 @media (min-width: 1128px) {
